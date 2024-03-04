@@ -16,6 +16,7 @@ let patrickWorkerCount = document.getElementById("PatrickWorkerCount")
 let PatrickCashPerSecond = document.getElementById("PatrickCashPerSecond")
 let patrickCost = 50
 let PatrickEffectiveness = 5;
+let patCost = document.getElementById("patCost")
 
 // if cookbtn is cliecked, add 1 money;
 cookbtn.addEventListener('click', function(){
@@ -50,6 +51,8 @@ function buyPatricks() {
         money.innerHTML = parseInt(money.innerHTML) - patrickCost;
         patrickWorkerCount.innerHTML = parseInt(patrickWorkerCount.innerHTML) + 1;
         PatrickCashPerSecond.innerHTML = parseInt(PatrickCashPerSecond.innerHTML) + PatrickEffectiveness;
+        patrickCost += 5;
+        patCost.innerHTML = patrickCost;
     }
 }
 
