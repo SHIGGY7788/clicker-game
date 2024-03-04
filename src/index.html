@@ -4,35 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
+  <title>Spongbob Clicker</title>
 </head>
 <body>
 
     <style>
         /*Custom cursor is spat.webp*/
         * {
-            cursor: url(/images/cuser.png), auto;
-}
-
-
-
+            cursor: url(/images/curzer.png), auto;
+        }
+        body {
+          background-image: url("/images/krabbybackground.jpg");
+        }
     </style>
+
   <div>
-    <h1 class="text-black underline italic text-center text-3xl select-none">Spongbob clicker</h1>
+    <h1 class="text-white underline italic text-center text-3xl select-none">Spongbob clicker</h1>
     <!--money-->
     <div class="flex justify-center">
         <img src="/images/cashamonay.jpg" class="h-[50px] w-[100px] mr-5">
-        <p class="text-black text-2xl select-none">Bob bucks: $</p>
-        <p id="money" class="text-black text-2xl select-none">0</p>
+        <p class="text-white text-2xl select-none">Bob bucks: $</p>
+        <p id="money" class="text-white text-2xl select-none">5000</p>
         <img src="/images/cashamonay.jpg" class="h-[50px] w-[100px] ml-5">
     </div>
     <div class="flex justify-center space-x-4 mt-5">
         
-        <button id="cook" class="text-white bg-black text-2xl h-[125px] w-[125px] rounded-2xl"><img src="/images/krabpaty.webp" class="w-full h-full rounded-2xl"></button>
-        <button id="CookUpg" class="text-white bg-black text-2xl h-[125px] w-[125px] border-r-4 rounded-2xl"><img src="/images/spat.webp" class='w-full h-full rounded-2xl'></button>
+        <img src="/images/krabpaty.webp" class="w-[125px] h-[125px] rounded-2xl" id="cook">
+        <img src="/images/spat.webp" class='bg-red-500 w-[125px] h-[125px] rounded-2xl ' id="CookUpg">
         <!--upg cost-->
-        <p class="text-black text-2xl mt-[5%]">Cost: <span id="cookUpgCost">10</span></p>
+        <p class="text-white text-2xl mt-[5%]">Cost: $<span id="cookUpgCost">10</span></p>
         <!--Upgrade counter-->
-        <p class="text-black text-2xl mt-[5%]">X <span id="cookUpgCount">0</span></p>
+        <p class="text-white text-2xl mt-[5%]">X <span id="cookUpgCount">0</span></p>
+    </div>
+
+    <!--Auto Patrick Farm-->
+    <div class="flex justify-center mt-5 ">
+      <div class="border-4 border-black h-[200px] w-[500px] rounded-lg bg-black">
+        <button class="absolute ml-[10rem] mt-[5rem] bg-black text-white rounded-lg h-[2rem] w-[10rem] visible" id="patrickUnlock">
+          Unlock Patty Mines $500
+        </button>
+        <div class="bg-black backdrop-blur-xl h-max w-max visible opacity-10" id="blocker">
+          <p class="absolute hidden text-white text-2xl mt-[5px] ml-[5px] bg-black rounded select-none" >Click me to buy more patrick</p>
+          <img src="/images/putpatricktowork.jfif" class="h-[192px] w-[492px] bg-transparent rounded-lg" id="buyPatrick">
+          <div>  
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Patrick info box-->
+    <div class="flex justify-center mt-5 hidden" id="patrickInfo">
+      <div class="bg-black text-white w-[15rem] h-[5rem] p-3 rounded-xl">
+        <p>Worker count: <span id="PatrickWorkerCount">0</span></p>
+        <p>Bob Bucks per second: <span id="PatrickCashPerSecond">0</span></p>
+      </div>
     </div>
 
 
