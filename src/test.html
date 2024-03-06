@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <title>Spongbob Clicker</title>
+  <style>
+    /*Custom cursor is spat.webp*/
+    * {
+        cursor: url(/images/curzer.png), auto;
+    }
+    /* body {
+      background-image: url("/images/krabbybackground.jpg");
+    } */
+</style>
+</head>
+<body class="bg-black">
+<!--Heading box with money, money per second, and the title-->
+    <div>
+
+        <!--Center items-->
+        <div class="flex justify-center ">
+            <div class=" border-2 border-white w-[400px]">
+                <h1 class="text-white underline italic text-center text-3xl select-none">Spongbob clicker</h1>
+                <p class="text-white text-2xl select-none text-center">Bob bucks: $<span id="money" class="text-white text-2xl select-none">100000</span></p>
+                <p class="text-white text-2xl select-none text-center">Bob bucks per second: $<span id="moneyPerSecond" class="text-white text-2xl select-none">0</span></p>
+            </div>
+        </div>
+        <!--Click to earn main area-->
+        <div class="flex justify-center space-x-4">
+            <img src="/images/krabpaty.webp" class="w-[400px] h-[400px] select-none" id="cook">
+        </div>
+        <!--List of clicker upgrades-->
+        <div class="flex justify-center space-x-4 select-none">
+            <ol class="border-2 border-white w-[400px] p-3">
+                <li class="w-[400px h-[75px] flex items-center" id="spatular">
+                    <img src="/images/spat.webp" class='bg-red-500 w-[75px] h-[75px] rounded-2xl'>
+                    <div class="ml-4">
+                        <p class="text-white text-2xl">Cost: $<span id="spatUpgCost">50</span></p>
+                        <p class="text-white">Increase the quality of your spatular</p>
+                        <p class="text-white">Current Amount Gained: +<span id="spatUpgDisplay">0</span></p>
+                    </div>
+                </li>
+                <li class="mt-2 flex items-center" id="pickles">
+                    <!--Increase pickle quality-->
+                    <img src="/images/pickles.jpg" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                    <div class="ml-4">
+                        <p class="text-white text-2xl">Cost: $750</p>
+                        <p class="text-white">Increase the quality of your pickles</p>
+                        <p class="text-white">+10 per click</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+
+<script src="text.js"></script>
+</body>
+
+</html>
