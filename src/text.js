@@ -35,8 +35,8 @@ function upgSpat(){
         money.innerHTML = parseInt(money.innerHTML) - parseInt(spatUpgCost.innerHTML);
         spatUpgCost.innerHTML = parseInt(spatUpgCost.innerHTML) + parseInt(spatUpgCost.innerHTML) * 0.6;
         spatUpgCost.innerHTML = (parseInt(spatUpgCost.innerHTML)).toFixed(0);
-        cookEfficiency += 3;
-        SpatEff = SpatEff + 3;
+        cookEfficiency += 2;
+        SpatEff = SpatEff + 2;
         spatUpgDisplay.innerHTML = SpatEff;
     };
 };
