@@ -9,6 +9,7 @@
     /*Custom cursor is spat.webp*/
     * {
         cursor: url(/images/curzer.png), auto;
+        user-select: none;
     }
     /* body {
       background-image: url("/images/krabbybackground.jpg");
@@ -17,44 +18,143 @@
 </head>
 <body class="bg-black">
 <!--Heading box with money, money per second, and the title-->
-    <div>
+    <div class="grid grid-cols-3">
+        <!--Left column-->
+        <div class="col-span-1">
+            <!--Add content for the left column here-->
+            
+        </div>
 
-        <!--Center items-->
-        <div class="flex justify-center ">
-            <div class=" border-2 border-white w-[400px]">
-                <h1 class="text-white underline italic text-center text-3xl select-none">Spongbob clicker</h1>
-                <p class="text-white text-2xl select-none text-center">Bob bucks: $<span id="money" class="text-white text-2xl select-none">50</span></p>
-                <p class="text-white text-2xl select-none text-center">Bob bucks per second: $<span id="moneyPerSecond" class="text-white text-2xl select-none">0</span></p>
+        <!--Middle column-->
+        <div class="col-span-1">
+            <div class="flex justify-center ">
+                <div class=" border-2 border-white w-[400px]">
+                    <h1 class="text-white underline italic text-center text-3xl select-none">Spongbob clicker</h1>
+                    <p class="text-white text-2xl select-none text-center">Bob bucks: $<span id="money" class="text-white text-2xl select-none">500000000</span></p>
+                    <p class="text-white text-2xl select-none text-center">Bob bucks per second: $<span id="moneyPerSecond" class="text-white text-2xl select-none">0</span></p>
+                </div>
+            </div>
+            <!--Click to earn main area-->
+            <div class="flex justify-center space-x-4">
+                <img src="/images/krabpaty.webp" draggable="false" class=" w-[400px] h-[400px] select-none border-r-2 border-l-2 border-white" id="cook">
+            </div>
+            <div class="flex justify-center space-x-4 select-none" id="itemContainer">
+                <ol class="border-2 border-white w-[400px] p-2 h-[350px] overflow-auto">
+                    <li class="w-[400px h-[75px] flex items-center" id="spatular">
+                        <img src="/images/spat.webp" class='bg-red-500 w-[75px] h-[75px] rounded-2xl'>
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $<span id="spatUpgCost">50</span></p>
+                            <p class="text-white">Increase Spatular Quality</p>
+                            <p class="text-white">Current Bonus: +<span id="spatUpgDisplay">0</span></p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="pickles">
+                        <!--add pickes-->
+                        <img src="/images/pickles.jpg" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $1,000</p>
+                            <p class="text-white">Add Pickles</p>
+                            <p class="text-white">+20 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="mayo">
+                        <!--maynoasie-->
+                        <img src="/images/mayo.webp" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $2,500</p>
+                            <p class="text-white">Invest in Mayo</p>
+                            <p class="text-white">+50 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="lowtierbuns">
+                        <!--low tier buns-->
+                        <img src="/images/lowtierbuns.jpeg" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $5,000</p>
+                            <p class="text-white">Get Tier 1 buns</p>
+                            <p class="text-white">+100 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="lettuce">
+                        <!--lettuce-->
+                        <img src="/images/lettud.webp" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $10,000</p>
+                            <p class="text-white">Munchy lettuce</p>
+                            <p class="text-white">+200 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="tomator">
+                        <!--tomato-->
+                        <img src="/images/tomator.jpeg" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $25,000</p>
+                            <p class="text-white">Tomator</p>
+                            <p class="text-white">+500 per click</p>
+                    </li>
+                    <li class="mt-2 flex items-center" id="ketchup">
+                        <!--ketchup-->
+                        <img src="/images/katchup.jpg" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $50,000</p>
+                            <p class="text-white">Ketchup</p>
+                            <p class="text-white">+1,000 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="mustard">
+                        <!--mustard-->
+                        <img src="/images/mustard.webp" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $100,000</p>
+                            <p class="text-white">Mustard</p>
+                            <p class="text-white">+2,000 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="cheese">
+                        <!--cheese-->
+                        <img src="/images/cheese.webp" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $250,000</p>
+                            <p class="text-white">Cheese</p>
+                            <p class="text-white">+5,000 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="onion">
+                        <!--extra onion-->
+                        <img src="/images/extraonion.webp" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $500,000</p>
+                            <p class="text-white">Extra Onions</p>
+                            <p class="text-white">+10,000 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="pinkjelly">
+                        <!--pink jelly-->
+                        <img src="/images/pinkjelly.jpg" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $1,000,000</p>
+                            <p class="text-white">Pink Jelly</p>
+                            <p class="text-white">+20,000 per click</p>
+                        </div>
+                    </li>
+                    <li class="mt-2 flex items-center" id="bluejelly">
+                        <!--blue jelly-->
+                        <img src="/images/bluejelly.jpeg" class="bg-black w-[75px] h-[75px] rounded-2xl">
+                        <div class="ml-4">
+                            <p class="text-white text-2xl">Cost: $2,500,000</p>
+                            <p class="text-white">Blue Jelly</p>
+                            <p class="text-white">+50,000 per click</p>
+                        </div>
+                    </li>
+                </ol>
             </div>
         </div>
-        <!--Click to earn main area-->
-        <div class="flex justify-center space-x-4">
-            <img src="/images/krabpaty.webp" class="w-[400px] h-[400px] select-none border-2 border-white" id="cook">
-        </div>
-        <!--List of clicker upgrades-->
-        <div class="flex justify-center space-x-4 select-none">
-            <ol class="border-2 border-white w-[400px] p-3">
-                <li class="w-[400px h-[75px] flex items-center" id="spatular">
-                    <img src="/images/spat.webp" class='bg-red-500 w-[75px] h-[75px] rounded-2xl'>
-                    <div class="ml-4">
-                        <p class="text-white text-2xl">Cost: $<span id="spatUpgCost">50</span></p>
-                        <p class="text-white">Increase the quality of your spatular</p>
-                        <p class="text-white">Current Amount Gained: +<span id="spatUpgDisplay">0</span></p>
-                    </div>
-                </li>
-                <li class="mt-2 flex items-center" id="pickles">
-                    <!--Increase pickle quality-->
-                    <img src="/images/pickles.jpg" class="bg-black w-[75px] h-[75px] rounded-2xl">
-                    <div class="ml-4">
-                        <p class="text-white text-2xl">Cost: $750</p>
-                        <p class="text-white">Increase the quality of your pickles</p>
-                        <p class="text-white">+10 per click</p>
-                    </div>
-                </li>
-            </ol>
-        </div>
 
-
+        <!--Right column-->
+        <div class="col-span-1">
+            <!--Add content for the right column here-->
+        </div>
+    </div>
 
 <script src="text.js"></script>
 </body>
