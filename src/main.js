@@ -53,7 +53,7 @@ function getMoneyPerSecond() {
 getMoneyPerSecond();
 blocker.addEventListener('click', startPatrickFarm);
 maidBlocker.addEventListener('click', startMaidFarm);
-
+/////////////
 function payForPatrick() {
     setInterval(function () {
         money.innerHTML = parseInt(money.innerHTML) + parseInt(PatrickCashPerSecond.innerHTML)

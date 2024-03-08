@@ -1,46 +1,77 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
-  <title>Spongbob Clicker</title>
-  <style>
-    /*Custom cursor is spat.webp*/
-    * {
-        cursor: url(/images/curzer.png), auto;
-        user-select: none;
-    }
-    /* body {
-      background-image: url("/images/krabbybackground.jpg");
-    } */
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Spongbob Clicker</title>
+    <style>
+        /*Custom cursor is spat.webp*/
+        * {
+            cursor: url(/images/curzer.png), auto;
+            user-select: none;
+        }
+
+        #moneymoneymoney {
+            background-image: url(/images/cashamonay.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 520px 110px;
+            height: 110px;            
+        }
+
+        #moneymoneymoney img {
+            max-width: 100%;
+            max-height: 100%;            max-height: 100%;
+        }
+    </style>
 </head>
+
 <body class="bg-black">
-<!--Heading box with money, money per second, and the title-->
-    <div class="grid grid-cols-3">
+    <!--Heading box with money, money per second, and the title-->
+    <div class="grid grid-cols-11">
+
+        <div class="col-span-1 bg-blue-600">
+
+        </div>
+
         <!--Left column-->
-        <div class="col-span-1">
-            <!--Add content for the left column here-->
-            
+        <div class="col-span-3 bg-black">
+            <!--Template for Ads-->
+            <div class="flex justify-center">
+                <div class="border-2 border-white w-[w-390] m-3">
+                    <p class="text-white">Play spongbob clicker !</p>
+                    <p class="text-white">Play spongbob clicker !</p>
+                    <p class="text-white">Play spongbob clicker !</p>
+                    <p class="text-white">Play spongbob clicker !</p>
+                    <p class="text-white">Play spongbob clicker !</p>
+                    <p class="text-white">Play spongbob clicker !</p>
+
+                </div>
+            </div>
+
         </div>
 
         <!--Middle column-->
-        <div class="col-span-1">
-            <div class="flex justify-center ">
-                <div class=" border-2 border-white w-[400px]">
-                    <h1 class="text-white underline italic text-center text-3xl select-none">Spongbob clicker</h1>
-                    <p class="text-white text-2xl select-none text-center">Bob bucks: $<span id="money" class="text-white text-2xl select-none">500000000</span></p>
-                    <p class="text-white text-2xl select-none text-center">Bob bucks per second: $<span id="moneyPerSecond" class="text-white text-2xl select-none">0</span></p>
+        <div class="col-span-3 bg-black">
+            <div class="flex justify-center">
+                <div class="border-2 border-white w-[600px]" id="moneymoneymoney">
+                        <h1 class="text-white underline italic text-center text-3xl select-none">Spongbob clicker</h1>
+                    <p class="text-white text-2xl select-none text-center">Bob bucks: $<span id="money"
+                            class="text-white text-2xl select-none">5000000</span></p>
+                    <p class="text-white text-2xl select-none text-center">Bob bucks per second: $<span
+                            id="moneyPerSecond" class="text-white text-2xl select-none">0</span></p>
                 </div>
             </div>
             <!--Click to earn main area-->
             <div class="flex justify-center space-x-4">
-                <img src="/images/krabpaty.webp" draggable="false" class=" w-[400px] h-[400px] select-none border-r-2 border-l-2 border-white" id="cook">
+                <img src="/images/krabpaty.webp" draggable="false"
+                    class=" w-[600px] h-[400px] select-none border-r-2 border-l-2 border-white" id="cook">
             </div>
             <div class="flex justify-center space-x-4 select-none" id="itemContainer">
-                <ol class="border-2 border-white w-[400px] p-2 h-[350px] overflow-auto">
-                    <li class="w-[400px h-[75px] flex items-center" id="spatular">
+                <ol class="border-2 border-white w-[600px] p-2 h-[350px] overflow-auto">
+                    <li class="w-[600px h-[75px] flex items-center" id="spatular">
                         <img src="/images/spat.webp" class='bg-red-500 w-[75px] h-[75px] rounded-2xl'>
                         <div class="ml-4">
                             <p class="text-white text-2xl">Cost: $<span id="spatUpgCost">50</span></p>
@@ -151,12 +182,61 @@
         </div>
 
         <!--Right column-->
-        <div class="col-span-1">
-            <!--Add content for the right column here-->
-        </div>
+        <div class="col-span-3 bg-black w-full">
+            <!------------------------auto upgrades------------------------>
+
+            <ol class="order-2 border-white w-full flex flex-wrap justify-start">
+                <!--Pretty Patties-->
+                <li class="flex items-center mt-2 w-full border-b-2 border-white">
+                    <div class="flex justify-start space-x-4">
+                        <img src="/images/prettypats.jpeg" class="bg-black w-[100px] h-[100px] rounded-2xl">
+                        <div class="ml-4">
+                            <div>
+                                <button class="text-white bg-black rounded-lg h-[2rem] w-[10rem] mt-4 visible"
+                                    id="ppUnlock">
+                                    Unlock Pretty Patties $500
+                                </button>
+                            </div>
+                            <div class="text-white hidden" id="ppHidden">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <span class="text-white text-2xl">Cost: $<span
+                                                id="ppCost">100</span></span>
+                                        <br>
+                                        <span class="text-white">Pretty Patty Farm</span>
+                                        <br>
+                                        <span class="text-white">Stands open: <span id="standsOpen">00000</span></span>
+                                        <br>
+                                        <span>Bob bucks per second: <span id="ppBucksPerSec">000</span></span>
+                                    </div>
+                                    <div class="flex flex-col items-end m-2 border-l-2 border-white">
+                                        <button
+                                            class="mb-1 ml-3 bg-green-500 h-[25px] w-[150px] text-sm border-white border-2" id="buyStand">Open
+                                            a new stand</button>
+                                        <button
+                                            class="mb-1 bg-green-500 h-[25px] w-[150px] text-sm border-white border-2" id="buyAd">Increase
+                                            advertising</button>
+                                        <button
+                                            class="bg-green-500 h-[25px] w-[150px] text-sm border-white border-2" id="buyQuality">Increase
+                                            quality</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
     </div>
 
-<script src="text.js"></script>
+
+    <!--Far right border-->
+    <div class="col-span-1 bg-blue-600">
+
+    </div>
+    </div>
+
+    <script src="text.js"></script>
 </body>
 
 </html>

@@ -92,8 +92,25 @@ cookbtn.addEventListener('click', function(event){
         }, 3); // Adjust the interval duration
     }, 300);
 });
+//////////////////////////ABBREVIATIONS//////////////////////
+
+// function abbreviateNumber(number) {
+//     const abbreviations = ['', 'K', 'M', 'B', 'T', 'Qd', 'Qn', 'Sx', 'Sp', 'Oc', 'No', 'De'];
+//     const ranges = [1000, 1000000, 1000000000, 1000000000000, 1000000000000000, 
+//                     1000000000000000000, 1000000000000000000000, 1000000000000000000000000,
+//                     1000000000000000000000000000, 1000000000000000000000000000000,
+//                     1000000000000000000000000000000000, 1000000000000000000000000000000000000];
+    
+//     for (let i = abbreviations.length - 1; i >= 0; i--) {
+//         if (number >= ranges[i]) {
+//             return (number / ranges[i]).toFixed(1) + abbreviations[i];
+//         }
+//     }
+//     return number.toString();
+// }
 
 
+//money per sec update//
 
 
 
@@ -278,4 +295,102 @@ function upgBlueJelly(){
 };
 blueJelly.addEventListener('click', upgBlueJelly);
 
-////////////////IDLE UPGRADES//////////////////
+////////////////IDLE UPGRADES/////////////////
+
+
+//pretty patty variables
+let ppUnlock = document.getElementById('ppUnlock');
+let ppCost = document.getElementById('ppCost');
+let ppPerSecond = document.getElementById('ppBucksPerSec');
+let ppHidden = document.getElementById('ppHidden');
+let standsOpen = document.getElementById('standsOpen');
+let buyStandBtn = document.getElementById('buyStand');
+let buyAdBtn = document.getElementById('buyAd');
+let buyQualityBtn = document.getElementById('buyQuality');
+let ppStartCost = 500;
+
+let standCount = 0;
+let standCost = 100;
+
+let adCount = 0;
+let qualityCount = 0;
+let ppTotal = 0;
+
+let standEff = 5;
+let adEff = 10;
+let qualityEff = 25;
+
+//pp Functionality
+
+//buyStands
+function buyStands(){
+    if (parseInt(money.innerHTML) >= standCost) {
+        money.innerHTML = parseInt(money.innerHTML) - standCost;
+        standCount++;
+        standsOpen.innerHTML = standCount;
+        standCost = (standCost * 1.3).toFixed(0);
+    }
+}
+
+buyStandBtn.addEventListener('click', buyStands);
+
+//buyAds
+function buyAds(){
+    if (parseInt(money.innerHTML) >= 1000) {
+        money.innerHTML = parseInt(money.innerHTML) - 1000;
+        adCount++;
+    }
+}
+
+buyAdBtn.addEventListener('click', buyAds);
+
+//buyQuality
+function buyQuality(){
+    if (parseInt(money.innerHTML) >= 5000) {
+        money.innerHTML = parseInt(money.innerHTML) - 5000;
+        qualityCount++;
+    }
+}
+
+buyQualityBtn.addEventListener('click', buyQuality);
+
+
+//get ppTotal
+function getPPTotal() {
+    ppTotal = (standCount * standEff) + (adCount * adEff) + (qualityCount * qualityEff);
+    ppPerSecond.innerHTML = ppTotal.toFixed(0);
+}
+
+setInterval(getPPTotal, 1000);
+
+//Add the pp total to da money every second
+function addppBucks() {
+    money.innerHTML = parseInt(money.innerHTML) + ppTotal;
+}
+
+setInterval(addppBucks, 1000);
+
+function startPrettyPatty(){
+    if (parseInt(money.innerHTML) >= ppStartCost) {
+        ppUnlock.classList.remove('visible');
+        ppUnlock.remove();
+        ppHidden.classList.remove('hidden');
+        ppHidden.classList.add('visible');
+        money.innerHTML = parseInt(money.innerHTML) - ppStartCost;
+        ppUnlock.removeEventListener('click', startPrettyPatty);
+        standCount++;
+        standsOpen.innerHTML = standCount;
+
+    }
+}
+
+ppUnlock.addEventListener('click', startPrettyPatty);
+
+
+//Get farm total and add it to the money every second
+let farmTotal = 0;
+function getTotal(){
+    farmTotal = ppTotal;
+    moneyPerSecond.innerHTML = farmTotal.toFixed(0);
+}
+setInterval(getTotal, 1000);
