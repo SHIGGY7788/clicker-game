@@ -18,23 +18,20 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 520px 110px;
-            height: 110px;            
+            height: 110px;
         }
 
         #moneymoneymoney img {
             max-width: 100%;
-            max-height: 100%;            max-height: 100%;
+            max-height: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
 
 <body class="bg-black">
     <!--Heading box with money, money per second, and the title-->
-    <div class="grid grid-cols-11">
-
-        <div class="col-span-1 bg-blue-600">
-
-        </div>
+    <div class="grid grid-cols-8">
 
         <!--Left column-->
         <div class="col-span-3 bg-black">
@@ -54,10 +51,10 @@
         </div>
 
         <!--Middle column-->
-        <div class="col-span-3 bg-black">
+        <div class="col-span-2 bg-black">
             <div class="flex justify-center">
                 <div class="border-2 border-white w-[600px]" id="moneymoneymoney">
-                        <h1 class="text-white underline italic text-center text-3xl select-none">Spongbob clicker</h1>
+                    <h1 class="text-white underline italic text-center text-3xl select-none">Spongbob clicker</h1>
                     <p class="text-white text-2xl select-none text-center">Bob bucks: $<span id="money"
                             class="text-white text-2xl select-none">5000000</span></p>
                     <p class="text-white text-2xl select-none text-center">Bob bucks per second: $<span
@@ -189,7 +186,11 @@
                 <!--Pretty Patties-->
                 <li class="flex items-center mt-2 w-full border-b-2 border-white">
                     <div class="flex justify-start space-x-4">
-                        <img src="/images/prettypats.jpeg" class="bg-black w-[100px] h-[100px] rounded-2xl">
+                        <div class="relative">
+                            <img src="/images/prettypats.jpeg" class="bg-black w-[100px] h-[100px] rounded-2xl"
+                                id="ppImg">
+
+                        </div>
                         <div class="ml-4">
                             <div>
                                 <button class="text-white bg-black rounded-lg h-[2rem] w-[10rem] mt-4 visible"
@@ -199,42 +200,39 @@
                             </div>
                             <div class="text-white hidden" id="ppHidden">
                                 <div class="flex justify-between">
-                                    <div>
-                                        <span class="text-white text-2xl">Cost: $<span
-                                                id="ppCost">100</span></span>
-                                        <br>
-                                        <span class="text-white">Pretty Patty Farm</span>
-                                        <br>
-                                        <span class="text-white">Stands open: <span id="standsOpen">00000</span></span>
-                                        <br>
-                                        <span>Bob bucks per second: <span id="ppBucksPerSec">000</span></span>
-                                    </div>
                                     <div class="flex flex-col items-end m-2 border-l-2 border-white">
                                         <button
-                                            class="mb-1 ml-3 bg-green-500 h-[25px] w-[150px] text-sm border-white border-2" id="buyStand">Open
+                                            class="mb-1 ml-3 bg-green-500 h-[25px] w-[150px] text-sm border-white border-2"
+                                            id="buyStand">Open
                                             a new stand</button>
                                         <button
-                                            class="mb-1 bg-green-500 h-[25px] w-[150px] text-sm border-white border-2" id="buyAd">Increase
+                                            class="mb-1 bg-green-500 h-[25px] w-[150px] text-sm border-white border-2"
+                                            id="buyAd">Increase
                                             advertising</button>
-                                        <button
-                                            class="bg-green-500 h-[25px] w-[150px] text-sm border-white border-2" id="buyQuality">Increase
+                                        <button class="bg-green-500 h-[25px] w-[150px] text-sm border-white border-2"
+                                            id="buyQuality">Increase
                                             quality</button>
+                                    </div>
+                                    <div class="flex flex-col items-end m-2">
+                                        <p class="text-white mb-1 ml-3 h-[25px] w-[150px] text-sm">Stand Cost: $<span
+                                                id="standCost">100</span></p>
+                                        <p class="text-white mb-1 ml-3 h-[25px] w-[150px] text-sm">Ad Cost: $<span
+                                                id="adCost">1000</span></p>
+                                        <p class="text-white ml-3 h-[25px] w-[150px] text-sm">Quality Cost: $<span
+                                                id="qualityCost">5000</span></p>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </li>
+        </div>
+        </li>
         </ol>
     </div>
 
 
-    <!--Far right border-->
-    <div class="col-span-1 bg-blue-600">
 
-    </div>
-    </div>
 
     <script src="text.js"></script>
 </body>

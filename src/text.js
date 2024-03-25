@@ -309,9 +309,16 @@ let buyAdBtn = document.getElementById('buyAd');
 let buyQualityBtn = document.getElementById('buyQuality');
 let ppStartCost = 500;
 
-let standCount = 0;
-let standCost = 100;
 
+let standsCostDisplay = document.getElementById('standCost');
+let adsCostDisplay = document.getElementById('adCost');
+let qualityCostDisplay = document.getElementById('qualityCost');
+
+let standCost = 100;
+let adCost = 1000;
+let qualityCost = 5000;
+
+let standCount = 0;
 let adCount = 0;
 let qualityCount = 0;
 let ppTotal = 0;
@@ -327,8 +334,9 @@ function buyStands(){
     if (parseInt(money.innerHTML) >= standCost) {
         money.innerHTML = parseInt(money.innerHTML) - standCost;
         standCount++;
-        standsOpen.innerHTML = standCount;
         standCost = (standCost * 1.3).toFixed(0);
+        standsCostDisplay.innerHTML = standCost;
+
     }
 }
 
@@ -336,9 +344,11 @@ buyStandBtn.addEventListener('click', buyStands);
 
 //buyAds
 function buyAds(){
-    if (parseInt(money.innerHTML) >= 1000) {
-        money.innerHTML = parseInt(money.innerHTML) - 1000;
+    if (parseInt(money.innerHTML) >= adCost) {
+        money.innerHTML = parseInt(money.innerHTML) - adCost;
         adCount++;
+        adCost = (adCost * 1.3).toFixed(0);
+        adsCostDisplay.innerHTML = adCost;
     }
 }
 
@@ -346,9 +356,11 @@ buyAdBtn.addEventListener('click', buyAds);
 
 //buyQuality
 function buyQuality(){
-    if (parseInt(money.innerHTML) >= 5000) {
-        money.innerHTML = parseInt(money.innerHTML) - 5000;
+    if (parseInt(money.innerHTML) >= standCost) {
+        money.innerHTML = parseInt(money.innerHTML) - standCost;
         qualityCount++;
+        qualityCost = (qualityCost * 1.3).toFixed(0);
+        qualityCostDisplay.innerHTML = qualityCost;
     }
 }
 
@@ -358,8 +370,9 @@ buyQualityBtn.addEventListener('click', buyQuality);
 //get ppTotal
 function getPPTotal() {
     ppTotal = (standCount * standEff) + (adCount * adEff) + (qualityCount * qualityEff);
-    ppPerSecond.innerHTML = ppTotal.toFixed(0);
+
 }
+
 
 setInterval(getPPTotal, 1000);
 
@@ -379,18 +392,9 @@ function startPrettyPatty(){
         money.innerHTML = parseInt(money.innerHTML) - ppStartCost;
         ppUnlock.removeEventListener('click', startPrettyPatty);
         standCount++;
-        standsOpen.innerHTML = standCount;
 
     }
 }
 
 ppUnlock.addEventListener('click', startPrettyPatty);
 
-
-//Get farm total and add it to the money every second
-let farmTotal = 0;
-function getTotal(){
-    farmTotal = ppTotal;
-    moneyPerSecond.innerHTML = farmTotal.toFixed(0);
-}
-setInterval(getTotal, 1000);
